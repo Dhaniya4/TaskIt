@@ -144,14 +144,6 @@ function Login() {
                           >
                             Password
                           </label>
-
-                          <button
-                            type="button"
-                            className="auth-text-button"
-                            disabled
-                          >
-                            Forgot password?
-                          </button>
                         </div>
 
                         <input

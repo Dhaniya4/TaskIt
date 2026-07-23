@@ -354,6 +354,25 @@ function Dashboard() {
           </article>
         </section>
 
+        <section className="spotify-card">
+            <div className="section-heading">
+              <p>FOCUS MODE</p>
+              <h2>Music for your productivity</h2>
+              <span>
+                Open Spotify and create your perfect workspace.
+              </span>
+            </div>
+
+            <a
+              href="https://open.spotify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="spotify-button"
+            >
+              🎵 Continue to Spotify
+            </a>
+          </section>
+
         <section className="dashboard-grid">
           <aside className="task-form-card">
             <div className="section-heading">

@@ -1,13 +1,13 @@
 :root {
-  --page-bg: #f4f3f8;
-  --card-bg: rgba(255, 255, 255, 0.82);
-  --card-solid: #ffffff;
+  --page-bg: #e9e8ef;
+  --card-bg: rgba(245, 244, 250, 0.88);
+  --card-solid: #f8f7fb;
   --text-main: #222131;
-  --text-muted: #777786;
-  --border: rgba(55, 51, 79, 0.1);
+  --text-muted: #737486;
+  --border: rgba(55, 51, 79, 0.12);
   --accent: #7156e8;
   --accent-soft: rgba(113, 86, 232, 0.12);
-  --shadow: 0 20px 55px rgba(50, 43, 91, 0.1);
+  --shadow: 0 20px 55px rgba(50, 43, 91, 0.14);
 }
 
 [data-theme="dark"] {
@@ -28,18 +28,13 @@ body {
 }
 
 .dashboard-page {
-  min-height: 100vh;
   background:
     radial-gradient(
       circle at 10% 0%,
-      var(--accent-soft),
-      transparent 26%
+      rgba(113, 86, 232, 0.10),
+      transparent 32%
     ),
     var(--page-bg);
-  color: var(--text-main);
-  transition:
-    background 200ms ease,
-    color 200ms ease;
 }
 
 .dashboard-nav {
@@ -618,4 +613,31 @@ body {
   .edit-save-button {
     width: 100%;
   }
+}
+
+.spotify-card {
+  padding: 24px;
+  margin-bottom: 30px;
+  border-radius: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
+.spotify-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 12px 22px;
+  border-radius: 14px;
+  background: #1db954;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.spotify-button:hover {
+  transform: translateY(-2px);
+  color: white;
 }
