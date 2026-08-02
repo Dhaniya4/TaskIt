@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import api from "../services/api";
 import "./Dashboard.css";
 
@@ -33,7 +34,7 @@ function Dashboard() {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location.replace("/login");
+    window.location.replace("/");
   };
 
   const handleUnauthorized = (error) => {
@@ -276,10 +277,13 @@ function Dashboard() {
       <nav className="dashboard-nav">
         <div className="container dashboard-nav-inner">
           <div className="dashboard-brand">
-            <span className="dashboard-logo">T</span>
-            <span>Taskly</span>
+            <img
+              src="/taskit-logo.png"
+              alt="TaskIt Logo"
+              className="dashboard-logo-image"
+            />
+            <span>TaskIt</span>
           </div>
-
           <div className="dashboard-nav-actions">
             <button
               type="button"
@@ -355,23 +359,23 @@ function Dashboard() {
         </section>
 
         <section className="spotify-card">
-            <div className="section-heading">
-              <p>FOCUS MODE</p>
-              <h2>Music for your productivity</h2>
-              <span>
-                Open Spotify and create your perfect workspace.
-              </span>
-            </div>
+          <div className="section-heading">
+            <p>FOCUS MODE</p>
+            <h2>Music for your productivity</h2>
+            <span>
+              Open Spotify and create your perfect workspace.
+            </span>
+          </div>
 
-            <a
-              href="https://open.spotify.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="spotify-button"
-            >
-              🎵 Continue to Spotify
-            </a>
-          </section>
+          <a
+            href="https://open.spotify.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="spotify-button"
+          >
+            🎵 Continue to Spotify
+          </a>
+        </section>
 
         <section className="dashboard-grid">
           <aside className="task-form-card">
@@ -496,7 +500,7 @@ function Dashboard() {
                     {status === "in-progress"
                       ? "In progress"
                       : status.charAt(0).toUpperCase() +
-                        status.slice(1)}
+                      status.slice(1)}
                   </button>
                 ))}
               </div>
@@ -525,17 +529,20 @@ function Dashboard() {
                   {filter === "all"
                     ? "Create your first task to get started."
                     : `You have no ${filter.replace(
-                        "-",
-                        " "
-                      )} tasks.`}
+                      "-",
+                      " "
+                    )} tasks.`}
                 </p>
               </div>
             ) : (
               <div className="todo-list">
                 {filteredTodos.map((todo) => (
-                  <article
+                  <motion.article
                     className={`todo-card todo-${todo.priority}`}
                     key={todo._id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
                   >
                     <div className="todo-main">
                       <div className="todo-heading">
@@ -619,7 +626,7 @@ function Dashboard() {
                         )}
                       </div>
                     </div>
-                  </article>
+                  </motion.article>
                 ))}
               </div>
             )}

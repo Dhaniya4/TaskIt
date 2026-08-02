@@ -44,12 +44,12 @@ function Register() {
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
 
-      navigate("/");
+      navigate("/dashboard");
       window.location.reload();
     } catch (error) {
       setMessage(
         error.response?.data?.message ||
-          "Unable to create your account. Please try again."
+        "Unable to create your account. Please try again."
       );
     } finally {
       setLoading(false);
@@ -85,30 +85,30 @@ function Register() {
                       </p>
                     </div>
 
-            <div className="auth-preview-card">
-            <div className="d-flex align-items-center justify-content-between mb-3">
-                <div>
-                <p className="auth-preview-label mb-1">THIS WEEK</p>
-                <h5 className="mb-0">Your journey begins</h5>
-                </div>
+                    <div className="auth-preview-card">
+                      <div className="d-flex align-items-center justify-content-between mb-3">
+                        <div>
+                          <p className="auth-preview-label mb-1">THIS WEEK</p>
+                          <h5 className="mb-0">Your journey begins</h5>
+                        </div>
 
-                <div className="auth-progress-circle">0%</div>
-            </div>
+                        <div className="auth-progress-circle">0%</div>
+                      </div>
 
-            <div className="auth-mini-task">
-                <span className="auth-task-dot"></span>
-                Set your priorities
-            </div>
+                      <div className="auth-mini-task">
+                        <span className="auth-task-dot"></span>
+                        Set your priorities
+                      </div>
 
-            <div className="auth-mini-task">
-                <span className="auth-task-dot"></span>
-                Build healthy habits
-            </div>
+                      <div className="auth-mini-task">
+                        <span className="auth-task-dot"></span>
+                        Build healthy habits
+                      </div>
 
-            <div className="auth-mini-task">
-                <span className="auth-task-dot"></span>
-                Celebrate small victories
-            </div>
+                      <div className="auth-mini-task">
+                        <span className="auth-task-dot"></span>
+                        Celebrate small victories
+                      </div>
 
                     </div>
                   </div>
@@ -118,7 +118,7 @@ function Register() {
                   <div className="auth-form-section">
                     <div className="auth-mobile-brand d-lg-none">
                       <span className="brand-mark">T</span>
-                      <span>Taskly</span>
+                      <span>TaskIt</span>
                     </div>
 
                     <div className="mb-4">

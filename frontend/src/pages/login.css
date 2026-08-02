@@ -3,16 +3,12 @@
   overflow-x: hidden;
   position: relative;
   background:
-    radial-gradient(
-      circle at top left,
+    radial-gradient(circle at top left,
       rgba(111, 78, 255, 0.18),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at bottom right,
+      transparent 32%),
+    radial-gradient(circle at bottom right,
       rgba(0, 184, 148, 0.12),
-      transparent 30%
-    ),
+      transparent 30%),
     #f5f6fa;
   color: #1f2233;
 }
@@ -59,11 +55,9 @@
   justify-content: space-between;
   color: #ffffff;
   background:
-    linear-gradient(
-      145deg,
+    linear-gradient(145deg,
       rgba(17, 20, 37, 0.96),
-      rgba(51, 41, 112, 0.92)
-    ),
+      rgba(51, 41, 112, 0.92)),
     #17192b;
 }
 
@@ -349,6 +343,7 @@ textarea.auth-input {
 
 /* Extra compact layout for shorter laptop screens */
 @media (min-width: 992px) and (max-height: 760px) {
+
   .auth-hero,
   .auth-form-section {
     min-height: 520px;

@@ -6,10 +6,10 @@ import "./Login.css";
 function Login() {
   const navigate = useNavigate();
 
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     username: "",
     password: "",
-});
+  });
 
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -32,7 +32,7 @@ function Login() {
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
 
-      navigate("/");
+      navigate("/dashboard");
       window.location.reload();
     } catch (error) {
       setMessage(
@@ -69,30 +69,30 @@ function Login() {
                         without making productivity feel stressful.
                       </p>
                     </div>
-                <div className="auth-preview-card">
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                    <div>
-                    <p className="auth-preview-label mb-1">TODAY</p>
-                    <h5 className="mb-0">A slower, better day</h5>
-                    </div>
+                    <div className="auth-preview-card">
+                      <div className="d-flex align-items-center justify-content-between mb-3">
+                        <div>
+                          <p className="auth-preview-label mb-1">TODAY</p>
+                          <h5 className="mb-0">A slower, better day</h5>
+                        </div>
 
-                    <div className="auth-progress-circle">72%</div>
-                </div>
+                        <div className="auth-progress-circle">72%</div>
+                      </div>
 
-                <div className="auth-mini-task completed-task">
-                    <span className="auth-task-dot"></span>
-                    Water the plants
-                </div>
+                      <div className="auth-mini-task completed-task">
+                        <span className="auth-task-dot"></span>
+                        Water the plants
+                      </div>
 
-                <div className="auth-mini-task">
-                    <span className="auth-task-dot"></span>
-                    Buy fresh flowers
-                </div>
+                      <div className="auth-mini-task">
+                        <span className="auth-task-dot"></span>
+                        Buy fresh flowers
+                      </div>
 
-                <div className="auth-mini-task">
-                    <span className="auth-task-dot"></span>
-                    Watch the sunset
-                </div>
+                      <div className="auth-mini-task">
+                        <span className="auth-task-dot"></span>
+                        Watch the sunset
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ function Login() {
                   <div className="auth-form-section">
                     <div className="auth-mobile-brand d-lg-none">
                       <span className="brand-mark">T</span>
-                      <span>Taskly</span>
+                      <span>TaskIt</span>
                     </div>
 
                     <div className="mb-4">
@@ -119,22 +119,22 @@ function Login() {
                     )}
 
                     <form onSubmit={handleSubmit}>
-                        <div className="mb-3">
+                      <div className="mb-3">
                         <label htmlFor="username" className="form-label auth-label">
-                            Username
+                          Username
                         </label>
 
                         <input
-                            type="text"
-                            id="username"
-                            name="username"
-                            className="form-control auth-input"
-                            value={formData.username}
-                            onChange={handleChange}
-                            placeholder="Enter your username"
-                            required
+                          type="text"
+                          id="username"
+                          name="username"
+                          className="form-control auth-input"
+                          value={formData.username}
+                          onChange={handleChange}
+                          placeholder="Enter your username"
+                          required
                         />
-                        </div>
+                      </div>
 
                       <div className="mb-3">
                         <div className="d-flex justify-content-between align-items-center">
