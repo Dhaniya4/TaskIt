@@ -14,7 +14,7 @@ app.use(express.json())
 app.use("/api/auth", authRoutes);
 app.use("/api/todos", todoRoutes);
 
-const port = process.env.PORT
+const port = process.env.PORT || 5000
 const mongouri = process.env.MONGO_URI
 
 mongoose.connect(mongouri)
@@ -25,5 +25,5 @@ mongoose.connect(mongouri)
     })
 })
 .catch((err) => {
-    console.log(err)
+    console.log("MongoDB connection failed:", err)
 })
