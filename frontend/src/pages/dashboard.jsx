@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import api from "../services/api";
-import "./Dashboard.css";
+import "./dashboard.css";
 
 function Dashboard() {
   const [todos, setTodos] = useState([]);
