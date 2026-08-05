@@ -15,9 +15,10 @@ function App() {
 
         <Route
           path="/"
-          element={<Home />}
+          element={
+            token ? <Navigate to="/dashboard" /> : <Home />
+          }
         />
-
 
         <Route
           path="/dashboard"
@@ -26,14 +27,12 @@ function App() {
           }
         />
 
-
         <Route
           path="/login"
           element={
             !token ? <Login /> : <Navigate to="/dashboard" />
           }
         />
-
 
         <Route
           path="/register"

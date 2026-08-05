@@ -23,38 +23,38 @@ function Register() {
     });
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setMessage("");
+const handleSubmit = async (event) => {
+  event.preventDefault();
+  setMessage("");
 
-    if (formData.password !== formData.confirmPassword) {
-      setMessage("Passwords do not match");
-      return;
-    }
+  if (formData.password !== formData.confirmPassword) {
+    setMessage("Passwords do not match");
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      const response = await api.post("/api/auth/register", {
-        username: formData.username,
-        email: formData.email,
-        password: formData.password,
-      });
+  try {
+    const response = await api.post("/api/auth/register", {
+      username: formData.username,
+      email: formData.email,
+      password: formData.password,
+    });
 
-      localStorage.setItem("token", response.data.token);
-      localStorage.setItem("user", JSON.stringify(response.data.user));
+    localStorage.setItem("token", response.data.token);
+    localStorage.setItem("user", JSON.stringify(response.data.user));
 
-      navigate("/dashboard");
-      window.location.reload();
-    } catch (error) {
-      setMessage(
-        error.response?.data?.message ||
-        "Unable to create your account. Please try again."
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
+    navigate("/dashboard");
+
+  } catch (error) {
+    setMessage(
+      error.response?.data?.message ||
+      "Unable to create your account. Please try again."
+    );
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <main className="auth-page">
