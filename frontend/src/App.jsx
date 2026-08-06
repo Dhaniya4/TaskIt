@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
 
 import Home from "./pages/index";
 import Login from "./pages/login";
@@ -7,14 +8,15 @@ import Dashboard from "./pages/dashboard";
 
 function App() {
 
-  const token = localStorage.getItem("token");
+  const [token, setToken] = useState(
+    localStorage.getItem("token")
+  );
 
   return (
     <BrowserRouter>
 
       <Routes>
 
-        {/* Home */}
         <Route
           path="/"
           element={
@@ -22,7 +24,6 @@ function App() {
           }
         />
 
-        {/* Login */}
         <Route
           path="/login"
           element={
@@ -30,7 +31,6 @@ function App() {
           }
         />
 
-        {/* Register */}
         <Route
           path="/register"
           element={
@@ -38,7 +38,6 @@ function App() {
           }
         />
 
-        {/* Dashboard */}
         <Route
           path="/dashboard"
           element={
