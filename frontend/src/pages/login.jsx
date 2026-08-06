@@ -44,7 +44,7 @@ function Login() {
   };
 
   return (
-    <main className="auth-page" style={{background:"red"}}>
+    <main className="auth-page">
       <div className="auth-background-shape auth-shape-one"></div>
       <div className="auth-background-shape auth-shape-two"></div>
 
