@@ -61,6 +61,8 @@ TaskIt/
 │
 ├── screenshots/     # Application screenshots
 │
+├── LICENSE
+│
 └── README.md
 ```
 
