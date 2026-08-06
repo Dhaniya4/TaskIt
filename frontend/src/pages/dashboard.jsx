@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import api from "../services/api";
-// import "./dashboard.css";
+import "./dashboard.css";
 
 
 function Dashboard() {

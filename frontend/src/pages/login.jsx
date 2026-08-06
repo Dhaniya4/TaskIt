@@ -33,7 +33,6 @@ function Login() {
       localStorage.setItem("user", JSON.stringify(response.data.user));
 
       navigate("/dashboard");
-      window.location.reload();
     } catch (error) {
       setMessage(
         error.response?.data?.message || "Unable to login. Please try again."
