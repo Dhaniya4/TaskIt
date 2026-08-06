@@ -4,6 +4,10 @@ import api from "../services/api";
 import "./login.css";
 
 function Login() {
+  return <h1>LOGIN PAGE TEST</h1>;
+}
+
+function Login() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
