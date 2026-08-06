@@ -6,3 +6,5 @@ import "./login.css";
 function Login() {
   return <h1>LOGIN PAGE TEST</h1>;
 }
+
+export default Login;
