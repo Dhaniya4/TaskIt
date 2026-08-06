@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import Home from "./pages/index";
 import Login from "./pages/login";
 import Register from "./pages/register";
@@ -13,6 +14,7 @@ function App() {
 
       <Routes>
 
+        {/* Home */}
         <Route
           path="/"
           element={
@@ -20,21 +22,28 @@ function App() {
           }
         />
 
+        {/* Login */}
+        <Route
+          path="/login"
+          element={
+            token ? <Navigate to="/dashboard" /> : <Login />
+          }
+        />
+
+        {/* Register */}
+        <Route
+          path="/register"
+          element={
+            token ? <Navigate to="/dashboard" /> : <Register />
+          }
+        />
+
+        {/* Dashboard */}
         <Route
           path="/dashboard"
           element={
             token ? <Dashboard /> : <Navigate to="/login" />
           }
-        />
-
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-
-        <Route
-          path="/register"
-          element={<Register />}
         />
 
       </Routes>
